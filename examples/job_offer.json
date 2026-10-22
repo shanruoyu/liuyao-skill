@@ -1,0 +1,13 @@
+{
+  "coins": [
+    "000",
+    "001",
+    "011",
+    "111",
+    "010",
+    "101"
+  ],
+  "question": "我这次应聘是否会被录用？",
+  "topic": "career_position",
+  "subject_relation": "self"
+}
