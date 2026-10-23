@@ -1,4 +1,4 @@
 interface:
   display_name: "六爻纳甲"
-  short_description: "读取六组三枚钱币记录，固定排卦并按占问对象与目标选择用神候选"
-  default_prompt: "请使用 $liuyao，按我提供的六组三位币面记录排卦，并说明本次问题的用神及取用依据。"
+  short_description: "支持手摇、随机与两种时间起卦，按占问对象取用神并排六爻纳甲卦"
+  default_prompt: "请使用 $liuyao 分析我的问题；若未提供摇卦结果，请先让我选择起卦方式。"

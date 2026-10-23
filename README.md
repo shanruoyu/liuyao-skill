@@ -7,10 +7,18 @@
 - `SKILL.md`：技能入口与工作流程。
 - `references/rules.md`：装卦规则与来源。
 - `references/yongshen.md`：用神与占问对象映射。
-- `scripts/liuyao_cli.py`：命令行计算器。
+- `scripts/casting_cli.py`：方法选择、时间和随机起卦入口。
+- `scripts/liuyao_cli.py`：原纳甲计算器，兼容已有六组输入。
+- `references/casting.md`：三种起卦方式及来源说明。
 - `scripts/tests/test_liuyao_cli.py`：回归测试。
 - `examples/job_offer.json`：合成输入示例。
 - `agents/openai.yaml`：技能界面元数据。
+
+## 只有问题时
+
+先让用户选择：按当前时间（默认传统年月日时法）、程序随机生成六组，或时间作种子生成六组。选定后才起卦、排盘并解读；用户已给六组时直接排盘。
+
+新入口 `scripts/casting_cli.py` 接受原有JSON；没有 `coins`、也没有 `casting_method` 时只返回待选择状态。用户确认后，由模型保留原问题并填写 `time_traditional`、`random` 或 `time_seed`。传统时间法取卦后统一按纳甲解读，组合口径及算法见 [起卦规则](references/casting.md)。
 
 ## 输入约定
 
@@ -36,11 +44,11 @@
 
 ## 运行
 
-需要 Python 3.10 或更新版本。基础装卦无需第三方依赖；计算月建、日辰、六神与旬空时需要安装锁定版本的历法依赖：
+需要 Python 3.10 或更新版本。基础装卦无需第三方依赖；计算月建、日辰、六神与旬空，以及三种自动起卦方式，需要安装锁定版本的历法依赖：
 
 ```sh
 python -m pip install -r scripts/requirements.txt
-python scripts/liuyao_cli.py --input examples/job_offer.json --output -
+python scripts/casting_cli.py --input examples/job_offer.json --output -
 ```
 
 输入和输出均支持 `-`，表示标准输入或标准输出。运行测试：
