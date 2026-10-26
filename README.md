@@ -7,6 +7,7 @@
 - `SKILL.md`：技能入口与工作流程。
 - `references/rules.md`：装卦规则与来源。
 - `references/yongshen.md`：用神与占问对象映射。
+- `references/interpretation.md`：白话解释、卦象说明与场景示例。
 - `scripts/casting_cli.py`：方法选择、时间和随机起卦入口。
 - `scripts/liuyao_cli.py`：原纳甲计算器，兼容已有六组输入。
 - `references/casting.md`：三种起卦方式及来源说明。
@@ -58,6 +59,10 @@ python -B -m unittest discover -s scripts/tests -v
 ```
 
 仓库保存通用源码。各机器使用自己的 Python 环境；本机专用 Windows 启动器和 Python 运行时不随仓库保存。
+
+## 解读表达
+
+默认先用白话回答问题，再解释关键依据与现实观察点，最后给出盘面。专业术语首次出现时随文解释，并用卦象和日常场景帮助理解；具体行动建议与时间窗口保留依据和条件。用户需要验算或专业细节时，可将技术部分提前。
 
 ## 解释范围
 
